@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - Tienda de Tenis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Punto de Venta - Tienda de Tenis</h1>
+    </header>
+    
+    <!-- Combos de productos -->
+    <section class="combos">
+        <h2>Combos Especiales</h2>
+        <div class="combo" data-name="Combo Básico" data-price="100">
+            <h3>Combo Básico</h3>
+            <p>Precio: $100</p>
+            <div class="selection">
+                <h4>Selecciona tus Zapatillas:</h4>
+                <div class="image-selection">
+                    <img src="images/zapatilla1.jpg" alt="Zapatilla 1" onclick="selectProduct('Zapatilla 1', 40, 'Calcetín 1', 10)">
+                    <img src="images/zapatilla2.jpg" alt="Zapatilla 2" onclick="selectProduct('Zapatilla 2', 50, 'Calcetín 1', 10)">
+                    <img src="images/zapatilla3.jpg" alt="Zapatilla 3" onclick="selectProduct('Zapatilla 3', 60, 'Calcetín 1', 10)">
+                </div>
+                <h4>Selecciona tus Calcetines:</h4>
+                <div class="image-selection">
+                    <img src="images/calcetin1.jpg" alt="Calcetín 1" onclick="selectProduct('Calcetín 1', 10)">
+                    <img src="images/calcetin2.jpg" alt="Calcetín 2" onclick="selectProduct('Calcetín 2', 15)">
+                    <img src="images/calcetin3.jpg" alt="Calcetín 3" onclick="selectProduct('Calcetín 3', 12)">
+                </div>
+            </div>
+            <button onclick="addComboToCart('Combo Básico', 100)">Agregar al Carrito</button>
+        </div>
+        
+        <div class="combo" data-name="Combo Avanzado" data-price="150">
+            <h3>Combo Avanzado</h3>
+            <p>Precio: $150</p>
+            <div class="selection">
+                <h4>Selecciona tus Zapatillas:</h4>
+                <div class="image-selection">
+                    <img src="images/zapatilla4.jpg" alt="Zapatilla 4" onclick="selectProduct('Zapatilla 4', 80, 'Calcetín 4', 15)">
+                    <img src="images/zapatilla5.jpg" alt="Zapatilla 5" onclick="selectProduct('Zapatilla 5', 90, 'Calcetín 4', 15)">
+                    <img src="images/zapatilla6.jpg" alt="Zapatilla 6" onclick="selectProduct('Zapatilla 6', 100, 'Calcetín 4', 15)">
+                </div>
+                <h4>Selecciona tus Calcetines:</h4>
+                <div class="image-selection">
+                    <img src="images/calcetin4.jpg" alt="Calcetín 4" onclick="selectProduct('Calcetín 4', 15)">
+                    <img src="images/calcetin5.jpg" alt="Calcetín 5" onclick="selectProduct('Calcetín 5', 12)">
+                    <img src="images/calcetin6.jpg" alt="Calcetín 6" onclick="selectProduct('Calcetín 6', 18)">
+                </div>
+            </div>
+            <button onclick="addComboToCart('Combo Avanzado', 150)">Agregar al Carrito</button>
+        </div>
+    </section>
+
+    <!-- Lista de productos -->
+    <section class="products">
+        <h2>Productos</h2>
+        <div class="product" data-name="Zapatillas Nike" data-price="80">
+            <h3>Zapatillas Nike</h3>
+            <img src="images/zapatillaNike.jpg" alt="Zapatillas Nike">
+            <p>Precio: $80</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Zapatillas Nike', 80)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Zapatillas Adidas" data-price="90">
+            <h3>Zapatillas Adidas</h3>
+            <img src="images/zapatillaAdidas.jpg" alt="Zapatillas Adidas">
+            <p>Precio: $90</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Zapatillas Adidas', 90)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Calcetines" data-price="10">
+            <h3>Calcetines</h3>
+            <img src="images/calcetines.jpg" alt="Calcetines">
+            <p>Precio: $10</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Calcetines', 10)">Agregar al Carrito</button>
+        </div>
+    </section>
+
+    <!-- Carrito -->
+    <section class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cartItems"></ul>
+        <p id="total">Total: $0</p>
+        <button onclick="clearCart()">Vaciar Carrito</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
